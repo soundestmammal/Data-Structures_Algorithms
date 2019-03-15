@@ -62,6 +62,7 @@ class BST {
         } else {
             var result = new Array();
             function traverseInOrder(node) {
+                // if (...) {traverse while not null}
                 node.left && traverseInOrder(node.left);
                 result.push(node.data);
                 node.right && traverseInOrder(node.right);
@@ -69,6 +70,34 @@ class BST {
             traverseInOrder(this.root);
             return result;
         };
+    }
+    preOrderTraversal() {
+        if (this.root == null) {
+            return null;
+        } else {
+            var result = new Array();
+            function traversePreOrder(node) {
+                result.push(node.data);
+                node.left && traversePreOrder(node.left);
+                node.right && traversePreOrder(node.right)
+            }
+            traversePreOrder(this.root);
+            return result;
+        }
+    }
+    postOrderTraversal() {
+        if (this.root == null) {
+            return null;
+        } else {
+            var result = new Array();
+            function traversePostOrder(node) {
+                node.left && traversePostOrder(node.left);
+                node.right && traversePostOrder(node.right);
+                result.push(node.data);
+            }
+            traversePostOrder(this.root);
+            return result;
+        }
     }
 } // class BST
 
@@ -88,3 +117,6 @@ console.log(`The maximum value is ${max}`);
 
 result = bst.inOrderTraversal();
 console.log(result);
+
+console.log(bst.preOrderTraversal());
+console.log(bst.postOrderTraversal());
