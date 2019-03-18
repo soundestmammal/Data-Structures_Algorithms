@@ -15,6 +15,7 @@ class BST {
     constructor(root = null) {
         this.root = root;
     }
+
     add(data) {
         const node = this.root;
         //base case if the tree is empty
@@ -42,6 +43,15 @@ class BST {
             search(node);
         }         
     };
+
+    predecessor() {
+        // Given a node, I want to find the predecessor 
+
+        // This is the world thing that he wants
+
+        // 
+    }
+
     findMin() {
         let current = this.root;
         while (current.left !== null) {
@@ -49,6 +59,7 @@ class BST {
         }
         return current.data;
     }
+
     findMax() {
         let current = this.root;
         while (current.right !== null) {
@@ -56,6 +67,7 @@ class BST {
         }
         return current.data;
     }
+
     inOrderTraversal() {
         if (this.root == null) {
             return null;
