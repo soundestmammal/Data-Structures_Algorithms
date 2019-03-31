@@ -42,7 +42,7 @@ Queue.prototype.end = function() {
         return this.storage[this.storage.length -1]
     } else {
         return false;
-        console.log("Queue End Error: Can not call End on an empty Queue.");
+        console.log("Error: Can not call End on an empty Queue.");
     }
 }
 
@@ -57,7 +57,7 @@ Queue.prototype.dequeue = function () {
         return this.storage.shift();
     } else {
         return false;
-        console.log("Dequeue Error: The Queue is Empty");
+        console.log("Error: Can not call dequeue on an empty queue");
     }
 }
 
@@ -89,7 +89,5 @@ console.log(Q.isEmpty()); // Should return true
 console.log(Q.front()); // shoud return false/ error
 console.log(Q.end()); // should return false / error
 console.log(Q.dequeue()); // shoudl return false/ error
-
-
 
 
