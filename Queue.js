@@ -15,7 +15,7 @@ Can be implemented with an array and a linked list.
 
 // Array implementation
 
-function Queue() {
+var Queue = function() {
     this.size = 0;
     this.storage = [];
 }
@@ -65,29 +65,29 @@ Queue.prototype.queue_size = function() {
     return this.size;
 }
 
-var Q = new Queue();
-Q.enqueue(3);
-Q.enqueue(1);
-Q.enqueue(4);
-Q.enqueue(1);
-Q.enqueue(5);
-Q.enqueue(9);
-console.log(Q.queue_size()); // Should be 6
-console.log(Q.isEmpty()); // Should return False
-console.log(Q.front()); // Should return 3
-console.log(Q.end()); // should return 9
-console.log(Q.dequeue()); // should return 3
-console.log(Q.dequeue()); // should return 1
-console.log(Q.dequeue()); // should return 4
-console.log(Q.front()); // should return 1
-console.log(Q.end()); // should return 9
-console.log(Q.isEmpty()); // shoudl return false
-console.log(Q.dequeue()); // should return 1
-console.log(Q.dequeue()); // should return 5
-console.log(Q.dequeue()); // should return 9
-console.log(Q.isEmpty()); // Should return true
-console.log(Q.front()); // shoud return false/ error
-console.log(Q.end()); // should return false / error
-console.log(Q.dequeue()); // shoudl return false/ error
+// var Q = new Queue();
+// Q.enqueue(3);
+// Q.enqueue(1);
+// Q.enqueue(4);
+// Q.enqueue(1);
+// Q.enqueue(5);
+// Q.enqueue(9);
+// console.log(Q.queue_size()); // Should be 6
+// console.log(Q.isEmpty()); // Should return False
+// console.log(Q.front()); // Should return 3
+// console.log(Q.end()); // should return 9
+// console.log(Q.dequeue()); // should return 3
+// console.log(Q.dequeue()); // should return 1
+// console.log(Q.dequeue()); // should return 4
+// console.log(Q.front()); // should return 1
+// console.log(Q.end()); // should return 9
+// console.log(Q.isEmpty()); // shoudl return false
+// console.log(Q.dequeue()); // should return 1
+// console.log(Q.dequeue()); // should return 5
+// console.log(Q.dequeue()); // should return 9
+// console.log(Q.isEmpty()); // Should return true
+// console.log(Q.front()); // shoud return false/ error
+// console.log(Q.end()); // should return false / error
+// console.log(Q.dequeue()); // shoudl return false/ error
 
-
+module.exports = { Queue };
