@@ -1,5 +1,5 @@
 // Import the Queue DS
-const { Queue } = require('./Queue');
+// const { Queue } = require('./Queue');
 
 // Create an Adjacency Data Structure
 const adjacencyDS = {
@@ -61,7 +61,7 @@ The Function must return:
 
 */
 
-var dijkstra = function(adjacencyDS, a, e) {
+var dijkstra = function(adjacencyDS, start, end) {
     // First thing destructure the ADS
     const { a, b, c, d, e } = adjacencyDS;
 
@@ -83,6 +83,7 @@ var dijkstra = function(adjacencyDS, a, e) {
                 if (node < min) {
                     min = node;
                 }
+                currentNode = min;
             })
             // Make sure this returns the minium (TEST)
         }
@@ -91,7 +92,7 @@ var dijkstra = function(adjacencyDS, a, e) {
 
         const Queue = [];
 
-        a.list.forEach(v => {
+        currentNode.list.forEach(v => {
             Queue.push(v.Keys());
         });
 
