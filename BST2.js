@@ -54,6 +54,7 @@ BinarySearchTree.prototype.find = function(val) {
         }
     }
     return false;
+    // Here
 }
 
 BinarySearchTree.prototype.BFS = function() {
