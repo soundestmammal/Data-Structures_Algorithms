@@ -76,7 +76,17 @@ var dijkstra = function(adjacencyDS, a, e) {
     while (unvisited.length) {
         if (visited.length == 0) {
             let currentNode = start;
+        } else {
+            // I want to set the currentNode to minimum
+            unvisited.filter(node => {
+                var min = Infinity;
+                if (node < min) {
+                    min = node;
+                }
+            })
+            // Make sure this returns the minium (TEST)
         }
+
         visited.push(currentNode);
 
         const Queue = [];
