@@ -70,11 +70,13 @@ var dijkstra = function(adjacencyDS, a, e) {
 
     // While loop for the whole algorithm
     // While the unvisted still has values in it
+    const visted = [];
+    const unvisited = [...adjacencyDS.Keys()];
 
     while (unvisited.length) {
-        const visted = [];
-        const unvisited = [...adjacencyDS.Keys()];
-        let currentNode = start;
+        if (visited.length == 0) {
+            let currentNode = start;
+        }
         visited.push(currentNode);
 
         const Queue = [];
