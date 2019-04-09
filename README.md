@@ -9,9 +9,3 @@ Why am I doing this?
 
 I feel that this could be a could study guide for myself having everything in one place with
 just enough detail without becoming too complex.
-
-Today is April 3 2019, and I will outline the next 3 steps I will take by April 05.
-
-1) Write up content on the Stack Data Structure.
-2) Insert Code into the markdown document to show implementation
-3) Create the next objective.
