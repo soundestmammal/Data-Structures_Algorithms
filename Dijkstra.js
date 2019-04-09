@@ -66,7 +66,7 @@ var dijkstra = function(adjacencyDS, start, end) {
     const { a, b, c, d, e } = adjacencyDS;
 
     // Change the cost for start node
-    a.costFromStart = 0;
+    start.costFromStart = 0;
 
     // While loop for the whole algorithm
     // While the unvisted still has values in it
@@ -78,11 +78,14 @@ var dijkstra = function(adjacencyDS, start, end) {
             let currentNode = start;
         } else {
             // I want to set the currentNode to minimum
+            // I have a feeling this is bad
+            // fix
             unvisited.filter(node => {
                 var min = Infinity;
                 if (node < min) {
                     min = node;
                 }
+
                 currentNode = min;
             })
             // Make sure this returns the minium (TEST)
@@ -92,6 +95,7 @@ var dijkstra = function(adjacencyDS, start, end) {
 
         const Queue = [];
 
+        // Push the adjacent nodes into the queue to be visited
         currentNode.list.forEach(v => {
             Queue.push(v.Keys());
         });
@@ -102,20 +106,23 @@ var dijkstra = function(adjacencyDS, start, end) {
         // I need to process the node
 
         while (Queue.length) {
+            // Dequeue the adjacent node
+            // 0(1)
             let currentEdge = Queue.shift();
-            if (!(visted.find(currentEdge) == currentEdge)) {
-                if ((currentNode.currentEdge + costFromStart) < currentEdge.costFromStart) {
+            if (!(visited.find(currentEdge) == currentEdge)) {
+                if ((currentEdge + costFromStart) < currentEdge.costFromStart) {
                     currentEdge.costFromStart = currentNode.currentEdge + costFromStart;
                 }
             }
         }
     }
 
+    // TDD
     // Go to the end and push the parent
 
     // go to the parent and push the parent ...
 
-    const path = [end];
+    const path = [...end];
 
     let currentParent = end.parent;
 
@@ -133,3 +140,5 @@ var dijkstra = function(adjacencyDS, start, end) {
 
 
 }
+
+// pramp

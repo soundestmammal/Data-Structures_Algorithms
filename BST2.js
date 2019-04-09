@@ -12,7 +12,7 @@ function BinarySearchTree() {
 
 BinarySearchTree.prototype.push = function(val) {
 
-    if(!this.root) {
+    if(this.root == null) {
         this.root = new Node(val);
         return;
     }
