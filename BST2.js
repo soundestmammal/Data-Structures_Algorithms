@@ -73,6 +73,15 @@ BinarySearchTree.prototype.BFS = function() {
     }
 }
 
+BinarySearchTree.prototype.inordertraversal = function() {
+    // Given a binary search tree return an array of all elements of the tree in ascending order.
+
+    // I will use a stack data structure to perform a Depth First Search Traversal
+    // And I will write it in the form of an iterative solution.
+
+    
+}
+
 var b = new BinarySearchTree();
 b.push(5);
 b.push(10);
