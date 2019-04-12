@@ -74,13 +74,59 @@ BinarySearchTree.prototype.BFS = function() {
 }
 
 BinarySearchTree.prototype.inordertraversal = function() {
-    // Given a binary search tree return an array of all elements of the tree in ascending order.
-
-    // I will use a stack data structure to perform a Depth First Search Traversal
-    // And I will write it in the form of an iterative solution.
-
     
+    // this will be the array I will return
+    const inordervalues = [];
+
+    const Stack = [];
+    if (this.root == null) {
+        return inordervalues;
+    }
+
+    while (Stack.length !== 0 || this.root !== null) {
+        while(this.root !== null) {
+            Stack.push(this.root);
+            this.root = this.root.left;
+        }
+        this.root = Stack.pop();
+        inordervalues.push(this.root.value);
+        this.root = this.root.right;
+    }
+    return inordervalues;
 }
+
+// For a tree to be a valid binary search tree
+
+// 1. The inordertraversal must be in sorted order
+BinarySearchTree.prototype.validateIfBST = function (){
+    if (root == null) return true;
+
+    const Stack = [];
+    var prev = null;
+    while(root !== null || Stack.length !== 0) {
+        while(root !== null) {
+            Stack.push(this.root);
+            this.root = this.root.left;
+        }
+        this.root = Stack.pop();
+        
+        // This line is checking if the previous value is not null
+        // and if the previous value that was the root is greater than the current root,
+        // (meaning that the elements will be not in ascending order)
+        // Then if this happens I want to return false;
+        if (prev !== null && prev.value >= this.root.value) return false;
+        prev = this.root;
+        this.root = this.root.right;
+    }
+
+    return true;
+}
+
+
+
+
+
+
 
 var b = new BinarySearchTree();
 b.push(5);
